@@ -1,4 +1,42 @@
 {
-  "lecturers": [],
-  "courses": []
+  "lecturers": [
+    {
+      "id": 1,
+      "firstName": "Jan",
+      "lastName": "Willekens",
+      "email": "jan.willekens@pxl.be"
+    },
+    {
+      "id": 2,
+      "firstName": "Isabelle",
+      "lastName": "Godfrind",
+      "email": "isabelle.godfrind@pxl.be"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "title": "IT Organisation & management",
+      "credits": 3,
+      "lecturerId": 2,
+      "year": 1,
+      "semester": 1
+    },
+    {
+      "id": 2,
+      "title": "Web Advanced",
+      "credits": 6,
+      "lecturerId": 1,
+      "year": 2,
+      "semester": 2
+    },
+    {
+      "id": 3,
+      "title": "Big Data",
+      "credits": 3,
+      "lecturerId": 2,
+      "year": 2,
+      "semester": 2
+    }
+  ]
 }
