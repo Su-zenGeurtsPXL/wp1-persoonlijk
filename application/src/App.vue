@@ -2,6 +2,7 @@
   <div id="app">
     <div class="navBar" id="myNavBar">
       <router-link to="/">Home</router-link>
+      <router-link to="/courses">Courses</router-link>
       <router-link to="/lecturers">Lecturers</router-link>
       <a href="javascript:void(0);" class="icon" v-on:click="openMenu()">
         <i class="fa fa-bars"></i>
