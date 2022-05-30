@@ -1,23 +1,23 @@
 <template>
   <div class="home" style="padding:16px">
-    <p>Welcome to</p>
-    <img src="../../public/pageIcon.png">
-    <h1>MY COURSES</h1>
+    <p id="welcome">Welcome to</p>
+    <img id="logo" src="../../public/pageIcon.png">
+    <h1 id="title">MY COURSES</h1>
   </div>
 </template>
 <style>
-h1 {
+#title {
   text-align: center;
 }
 
-p {
+#welcome {
   font-size: 60px;
   color: #5306b9;
   margin: 10px;
   text-align: center;
 }
 
-img {
+#logo {
   width: 100px;
   display: block;
   margin-left: auto;

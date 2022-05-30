@@ -1,3 +1,4 @@
+<!--TODO: Alt-tags fixen-->
 <template>
   <div id="app">
     <div class="navBar" id="myNavBar">
@@ -35,7 +36,7 @@ export default {
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-body {
+body, button {
   margin: 0;
   font-family: 'Roboto', sans-serif;
 }
@@ -69,7 +70,7 @@ h1 {
   font-size: 17px;
 }
 
-.navBar a:hover{
+.navBar a:hover {
   background-color: #5306b9;
 }
 
