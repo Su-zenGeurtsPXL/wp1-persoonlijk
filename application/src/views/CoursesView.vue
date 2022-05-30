@@ -6,13 +6,11 @@
       <table id="myTable">
         <tr class="header">
           <th style="width:60%;">Title</th>
-          <th style="width:10%;">credits</th>
-          <th style="width:30%;">Period</th>
+          <th style="width:40%;">credits</th>
         </tr>
         <tr class="row" v-for="course in $store.state.courses" v-bind:key="course" v-on:click="getCourse(course)">
           <td>{{course.title}}</td>
           <td>{{course.credits}} SP</td>
-          <td>Year {{course.year}}, Sem {{course.semester}}</td>
         </tr>
       </table>
     </div>

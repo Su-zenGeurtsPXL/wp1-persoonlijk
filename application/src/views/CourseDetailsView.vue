@@ -6,13 +6,21 @@
       Semester: {{$store.state.course.semester}}</p>
     <button v-on:click="editCourse()">Edit</button>
   </div>
+  <div class="form" v-if="edit==true">
+    <UpdatableCourse></UpdatableCourse>
+  </div>
 </template>
 
 <script>
+import UpdatableCourse from '../components/UpdatableCourse.vue';
 export default {
+  components: {
+    UpdatableCourse
+  },
   props: ['courseId'],
   data() {
     return {
+      edit: false,
       id: this.courseId,
     }
   },
@@ -24,7 +32,7 @@ export default {
       this.$store.dispatch('fetchCourseId', {courseId: this.courseId});
     },
     editCourse() {
-
+      this.edit = true;
     }
   }
 }
