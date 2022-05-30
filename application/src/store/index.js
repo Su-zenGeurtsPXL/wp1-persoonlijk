@@ -32,7 +32,45 @@ export default createStore({
                     .catch((error) => {
                         state.commit('_updateError', {error: error});
                     });
-            }
+            },
+            fetchCourseId: function (state, payload) {
+                state.commit('_updateError', {error: ''});
+                state.commit('_emptyCourseId');
+                let courseId = payload.courseId;
+                fetch(`${url}/${courseId}`)
+                    .then((response) => {
+                        if (response.status == 200) {
+                            return response.json();
+                        } else {
+                            throw `error with status ${response.status}`;
+                        }
+                    })
+                    .then((course) => {
+                        state.commit('_setCourseId', {course: course});
+                    })
+                    .catch((error) => {
+                        state.commit('_updateError', {error: error});
+                    });
+            },
+            fetchLecturerId: function (state, payload) {
+                state.commit('_updateError', {error: ''});
+                state.commit('_emptyLecturerId');
+                let lecturerId = payload.lecturerId;
+                fetch(`${url}/${lecturerId}`)
+                    .then((response) => {
+                        if (response.status == 200) {
+                            return response.json();
+                        } else {
+                            throw `error with status ${response.status}`;
+                        }
+                    })
+                    .then((lecturer) => {
+                        state.commit('_setLecturerId', {lecturer: lecturer});
+                    })
+                    .catch((error) => {
+                        state.commit('_updateError', {error: error});
+                    });
+            },
         },
         mutations: {
             _emptyCourses(state) {
@@ -40,6 +78,18 @@ export default createStore({
             },
             _setCourses(state, payload) {
                 state.courses = payload.courses;
+            },
+            _emptyCoursesId(state) {
+                state.course = [];
+            },
+            _setCoursesId(state, payload) {
+                state.course = payload.course;
+            },
+            _emptyLecturerId(state) {
+                state.lecturer = [];
+            },
+            _setLecturerId(state, payload) {
+                state.lecturer = payload.lecturer;
             },
             _updateError(state, payload) {
                 state.error = payload.error;
