@@ -27,9 +27,6 @@ export default {
   data() {
     return {
       courses: [],
-      currentCourse: null,
-      currentIndex: -1,
-      title: "",
       rows:[],
       message: "",
     }
@@ -42,7 +39,7 @@ export default {
       this.$store.dispatch('fetchCourses');
     },
     getCourse(course) {
-      this.$router.push({name: 'courseDetails', params: {id: course.id}});
+      this.$router.push({name: 'courseDetails', params: {courseId: course.id}});
     },
     search() {
       // input = document.getElementById("myInput");

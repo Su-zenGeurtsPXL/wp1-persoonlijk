@@ -17,7 +17,7 @@ const routes = [
         component: Courses
     },
     {
-        path: "/courses/:id/details",
+        path: "/courses/:courseId/details",
         name: "courseDetails",
         component: CourseDetails,
         props: true

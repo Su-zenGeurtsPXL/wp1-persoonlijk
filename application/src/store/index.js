@@ -6,6 +6,7 @@ export default createStore({
         state: {
             lecturers: [],
             courses: [],
+            course: {},
             error: '',
             courseDetails: [],
             lecturerDetails: []
@@ -37,7 +38,7 @@ export default createStore({
                 state.commit('_updateError', {error: ''});
                 state.commit('_emptyCourseId');
                 let courseId = payload.courseId;
-                fetch(`${url}/${courseId}`)
+                fetch(`${url}/courses/${courseId}`)
                     .then((response) => {
                         if (response.status == 200) {
                             return response.json();
@@ -79,10 +80,10 @@ export default createStore({
             _setCourses(state, payload) {
                 state.courses = payload.courses;
             },
-            _emptyCoursesId(state) {
+            _emptyCourseId(state) {
                 state.course = [];
             },
-            _setCoursesId(state, payload) {
+            _setCourseId(state, payload) {
                 state.course = payload.course;
             },
             _emptyLecturerId(state) {
